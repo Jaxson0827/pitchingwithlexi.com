@@ -11,14 +11,52 @@ type WaitlistProps = {
 export function Waitlist({ formAction }: WaitlistProps) {
   const [error, setError] = useState<string | null>(null);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
     setError(null);
+
     if (!formAction) {
-      e.preventDefault();
       setError(
         "Waitlist isn’t configured yet. Set NEXT_PUBLIC_WAITLIST_FORM_ACTION to your Google Apps Script Web App URL (see .env.example).",
       );
+      return;
+    }
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const email = String(data.get("email") ?? "").trim();
+    const name = String(data.get("name") ?? "").trim();
+    const phone = String(data.get("phone") ?? "").trim();
+
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, name, phone }),
+      });
+      const payload: { error?: string } = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setError(
+          typeof payload.error === "string"
+            ? payload.error
+            : "Something went wrong. Please try again.",
+        );
+        return;
+      }
+      setShowSuccess(true);
+      requestAnimationFrame(() => {
+        document.getElementById("waitlist")?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      });
+    } catch {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
     }
   }
 
@@ -97,9 +135,8 @@ export function Waitlist({ formAction }: WaitlistProps) {
 
         <form
           className="mt-10 space-y-6"
-          action={formAction || undefined}
-          method={formAction ? "POST" : undefined}
           onSubmit={onSubmit}
+          aria-busy={submitting}
         >
           <div>
             <label
@@ -161,9 +198,10 @@ export function Waitlist({ formAction }: WaitlistProps) {
 
           <button
             type="submit"
-            className="inline-flex h-[52px] min-h-[44px] w-full items-center justify-center rounded-md bg-accent px-7 font-sans text-base font-medium text-white transition-[background,transform] duration-200 hover:-translate-y-px hover:bg-accent-hover active:translate-y-0 sm:w-auto"
+            disabled={submitting}
+            className="inline-flex h-[52px] min-h-[44px] w-full items-center justify-center rounded-md bg-accent px-7 font-sans text-base font-medium text-white transition-[background,transform] duration-200 hover:-translate-y-px hover:bg-accent-hover active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0 sm:w-auto"
           >
-            Join my waitlist
+            {submitting ? "Submitting…" : "Join my waitlist"}
           </button>
         </form>
 
