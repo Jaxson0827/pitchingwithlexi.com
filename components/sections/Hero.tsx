@@ -9,7 +9,6 @@ export function Hero() {
       className="relative min-h-[100svh] min-h-[100vh] bg-ink lg:min-h-0"
       aria-label="Introduction"
     >
-      {/* Mobile: image on top, text card overlaps */}
       <div className="flex min-h-[100svh] flex-col lg:grid lg:min-h-[100svh] lg:grid-cols-[42%_58%]">
         <div className="relative order-1 h-[58vh] min-h-[280px] lg:order-2 lg:h-auto lg:min-h-[100svh]">
           <Image
@@ -39,20 +38,21 @@ export function Hero() {
             One-on-one lessons built around your athlete—mechanics, mindset,
             and a plan that lasts beyond the mound.
           </p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <a
-              href="#book"
-              className="inline-flex h-[52px] min-h-[44px] items-center justify-center rounded-md bg-accent px-7 font-sans text-base font-medium text-white transition-[background,transform] duration-200 hover:-translate-y-px hover:bg-accent-hover active:translate-y-0"
-            >
-              Book a lesson
-            </a>
+          <p className="mt-10 font-sans text-base">
             <a
               href="#services"
-              className="inline-flex h-[52px] min-h-[44px] items-center justify-center rounded-md border border-line bg-bg-elevated px-7 font-sans text-base font-medium text-ink transition-colors hover:border-ink-faint lg:border-white/35 lg:bg-white/10 lg:text-white lg:backdrop-blur-sm lg:hover:border-white/55 lg:hover:bg-white/15"
+              className="text-ink-muted underline decoration-line underline-offset-4 transition-colors hover:text-ink lg:text-white/80 lg:decoration-white/30 lg:hover:text-white"
             >
-              View services
+              Explore services
             </a>
-          </div>
+            <span className="text-ink-faint lg:text-white/40"> · </span>
+            <a
+              href="#waitlist"
+              className="font-medium text-accent underline decoration-accent/35 underline-offset-4 transition-colors hover:text-accent-hover lg:text-white lg:decoration-white/40 lg:hover:text-cream"
+            >
+              Join the waitlist
+            </a>
+          </p>
         </div>
       </div>
 

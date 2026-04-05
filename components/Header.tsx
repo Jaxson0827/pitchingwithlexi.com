@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { NAV_LINKS } from "@/lib/site";
 
-const SECTION_IDS = ["about", "services", "book", "faq", "contact"] as const;
+const SECTION_IDS = ["about", "services", "waitlist", "faq", "contact"] as const;
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -154,13 +154,6 @@ export function Header() {
               </a>
             ))}
           </nav>
-          <a
-            href="#book"
-            onClick={closeMobile}
-            className="flex h-[52px] w-full items-center justify-center rounded-md bg-accent text-base font-medium text-white transition-colors hover:bg-accent-hover"
-          >
-            Book a lesson
-          </a>
         </div>
       )}
     </>

@@ -12,7 +12,7 @@ export function Footer() {
             Still have questions?
           </h2>
           <p className="mt-4 max-w-md text-cream/70">
-            Reach out anytime—whether you&apos;re ready to book or just
+            Reach out anytime—whether you&apos;re on the waitlist or still
             exploring options for your athlete.
           </p>
           <a

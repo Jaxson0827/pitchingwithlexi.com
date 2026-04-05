@@ -10,7 +10,7 @@ const ITEMS = [
   },
   {
     q: "What ages and levels do you coach?",
-    a: "From beginners building a foundation to advanced pitchers refining speed and spin. If you’re unsure, book a single session and we’ll map a plan.",
+    a: "From beginners building a foundation to advanced pitchers refining speed and spin. Join the waitlist and we’ll match you when a spot fits.",
   },
   {
     q: "Do parents stay for lessons?",
@@ -18,7 +18,7 @@ const ITEMS = [
   },
   {
     q: "How does payment work?",
-    a: "Handled through your booking tool (e.g. Stripe on Cal.com or Acuity) or as you prefer. Details can be finalized when scheduling goes live.",
+    a: "When you’re offered a spot off the waitlist, you’ll get clear pricing and payment options before anything is confirmed.",
   },
 ] as const;
 

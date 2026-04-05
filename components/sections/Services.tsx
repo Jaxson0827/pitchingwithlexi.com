@@ -10,8 +10,6 @@ const CARDS = [
       "Plan to practice between sessions",
     ],
     duration: "60 minutes",
-    cta: "Choose times",
-    hash: "#book",
   },
   {
     eyebrow: "Private · Online",
@@ -22,8 +20,6 @@ const CARDS = [
       "Ideal for distance or busy schedules",
     ],
     duration: "60 minutes",
-    cta: "Choose times",
-    hash: "#book",
   },
 ] as const;
 
@@ -73,12 +69,15 @@ export function Services() {
                 <p className="mt-8 text-sm text-ink-faint">
                   Duration · <span className="text-ink-muted">{c.duration}</span>
                 </p>
-                <a
-                  href={c.hash}
-                  className="mt-6 inline-flex w-fit min-h-[44px] items-center font-sans text-base font-medium text-accent transition-colors hover:text-accent-hover"
-                >
-                  {c.cta}
-                </a>
+                <p className="mt-4 text-sm text-ink-muted">
+                  New spots are offered to the waitlist first.{" "}
+                  <a
+                    href="#waitlist"
+                    className="font-medium text-accent underline decoration-accent/30 underline-offset-4 hover:text-accent-hover"
+                  >
+                    Join the waitlist
+                  </a>
+                </p>
               </article>
             </Reveal>
           ))}

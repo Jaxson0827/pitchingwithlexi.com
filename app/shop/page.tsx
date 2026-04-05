@@ -7,8 +7,8 @@ export default function ShopPlaceholder() {
         Shop coming soon
       </h1>
       <p className="mt-4 max-w-md text-ink-muted">
-        Equipment and training tools will be available here. For now, book a
-        lesson on the home page.
+        Equipment and training tools will be available here. For now, join the
+        waitlist on the home page.
       </p>
       <Link
         href="/"
