@@ -22,7 +22,7 @@ export function Services() {
   return (
     <section
       id="services"
-      className="scroll-mt-20 bg-bg px-6 py-14 md:px-10 md:py-[4.5rem] lg:px-16 lg:py-24"
+      className="scroll-mt-20 bg-bg px-4 py-12 sm:px-6 sm:py-14 md:px-10 md:py-[4.5rem] lg:px-16 lg:py-24"
       aria-labelledby="services-heading"
     >
       <div className="mx-auto max-w-[1200px]">
@@ -43,7 +43,7 @@ export function Services() {
         <div className="grid gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
           {OFFERINGS.map((c, i) => (
             <Reveal key={c.title} delayMs={i * 80}>
-              <article className="group flex h-full flex-col rounded-lg border border-line bg-bg-elevated p-7 transition-[transform,box-shadow,border-color] duration-200 ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:-translate-y-1 hover:border-accent/35 hover:shadow-[var(--shadow-card-hover)] md:p-10">
+              <article className="group flex h-full flex-col rounded-lg border border-line bg-bg-elevated p-5 transition-[transform,box-shadow,border-color] duration-200 ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:-translate-y-1 hover:border-accent/35 hover:shadow-[var(--shadow-card-hover)] sm:p-7 md:p-10">
                 <p className="font-sans text-[0.75rem] font-medium uppercase tracking-[0.12em] text-ink-faint">
                   {c.eyebrow}
                 </p>
@@ -57,7 +57,7 @@ export function Services() {
                   New spots are offered to the waitlist first.{" "}
                   <a
                     href="#waitlist"
-                    className="font-medium text-accent underline decoration-accent/30 underline-offset-4 hover:text-accent-hover"
+                    className="inline-flex min-h-11 items-center font-medium text-accent underline decoration-accent/30 underline-offset-4 hover:text-accent-hover"
                   >
                     Join the waitlist
                   </a>

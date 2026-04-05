@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer
       id="contact"
-      className="scroll-mt-20 bg-ink px-6 py-16 text-cream md:px-10 md:py-20 lg:px-16"
+      className="scroll-mt-20 bg-ink px-4 py-14 text-cream sm:px-6 sm:py-16 md:px-10 md:py-20 lg:px-16"
     >
       <div className="mx-auto max-w-[1200px]">
         <Reveal>
@@ -17,7 +17,7 @@ export function Footer() {
           </p>
           <a
             href="mailto:hello@pitchingwithlexi.com"
-            className="mt-8 inline-block font-sans text-lg font-medium text-cream underline decoration-cream/30 underline-offset-4 transition-colors hover:decoration-cream"
+            className="mt-8 inline-block max-w-full break-all font-sans text-base font-medium text-cream underline decoration-cream/30 underline-offset-4 transition-colors hover:decoration-cream sm:text-lg"
           >
             hello@pitchingwithlexi.com
           </a>
@@ -26,7 +26,7 @@ export function Footer() {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/35 text-cream transition-colors hover:border-cream/55"
+              className="flex min-h-11 min-w-11 items-center justify-center rounded-full border border-cream/35 text-cream transition-colors hover:border-cream/55"
               aria-label="Instagram"
             >
               <svg
@@ -47,11 +47,17 @@ export function Footer() {
         </Reveal>
         <div className="mt-16 flex flex-col gap-3 border-t border-white/15 pt-8 font-sans text-[0.8125rem] text-cream/45 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Pitching with Lexi. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="#" className="transition-colors hover:text-cream/70">
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            <a
+              href="#"
+              className="inline-flex min-h-11 items-center py-1 transition-colors hover:text-cream/70"
+            >
               Privacy
             </a>
-            <a href="#" className="transition-colors hover:text-cream/70">
+            <a
+              href="#"
+              className="inline-flex min-h-11 items-center py-1 transition-colors hover:text-cream/70"
+            >
               Terms
             </a>
           </div>

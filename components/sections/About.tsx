@@ -7,7 +7,7 @@ export function About() {
   return (
     <section
       id="about"
-      className="scroll-mt-20 px-6 py-14 md:px-10 md:py-[4.5rem] lg:px-16 lg:py-24"
+      className="scroll-mt-20 px-4 py-12 sm:px-6 sm:py-14 md:px-10 md:py-[4.5rem] lg:px-16 lg:py-24"
       aria-labelledby="about-heading"
     >
       <div className="mx-auto grid max-w-[1200px] items-center gap-12 lg:grid-cols-2 lg:gap-16">
@@ -34,7 +34,7 @@ export function About() {
             >
               Meet Lexi
             </h2>
-            <div className="mt-8 max-w-[36rem] space-y-5 text-ink-muted">
+            <div className="mt-8 max-w-[36rem] space-y-5 break-words text-ink-muted">
               <p className="text-ink">
                 I&apos;m <strong className="font-semibold">Lexi Atcitty</strong>
                 , former Division I pitcher, and I&apos;m passionate about
@@ -70,7 +70,7 @@ export function About() {
                 athletes in Utah County.
               </p>
             </div>
-            <blockquote className="mt-10 border-l-[3px] border-accent pl-6 font-display text-2xl font-normal italic leading-snug text-ink">
+            <blockquote className="mt-10 border-l-[3px] border-accent pl-4 font-display text-xl font-normal italic leading-snug text-ink sm:pl-6 sm:text-2xl">
               Move efficiently, throw with intent—and make it play in games.
             </blockquote>
           </div>

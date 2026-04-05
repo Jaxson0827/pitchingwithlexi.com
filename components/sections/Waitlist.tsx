@@ -21,17 +21,17 @@ export function Waitlist({ formAction }: WaitlistProps) {
   return (
     <section
       id="waitlist"
-      className="scroll-mt-20 px-6 py-14 md:px-10 md:py-[4.5rem] lg:px-16 lg:py-24"
+      className="scroll-mt-20 px-4 py-12 sm:px-6 sm:py-14 md:px-10 md:py-[4.5rem] lg:px-16 lg:py-24"
       aria-labelledby="waitlist-heading"
     >
-      <div className="mx-auto max-w-[880px] rounded-xl border border-line bg-bg-elevated p-6 shadow-[var(--shadow-panel)] md:p-12">
+      <div className="mx-auto max-w-[880px] rounded-xl border border-line bg-bg-elevated p-5 shadow-[var(--shadow-panel)] sm:p-6 md:p-12">
         <h2
           id="waitlist-heading"
           className="font-display text-[clamp(2rem,3.5vw,3rem)] font-medium leading-[1.12] tracking-[-0.02em] text-ink"
         >
           Join my waitlist
         </h2>
-        <p className="mt-3 max-w-xl text-ink-muted">
+        <p className="mt-3 max-w-xl text-pretty text-ink-muted">
           Get first access when new lesson spots open. I&apos;ll only email you
           when it matters—no spam.
         </p>
@@ -77,7 +77,7 @@ export function Waitlist({ formAction }: WaitlistProps) {
           </div>
 
           {error && (
-            <p className="text-sm text-accent" role="alert">
+            <p className="break-words text-sm text-accent" role="alert">
               {error}
             </p>
           )}

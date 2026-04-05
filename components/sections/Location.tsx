@@ -7,16 +7,16 @@ const UTAH_COUNTY_MAP =
 export function Location() {
   return (
     <section
-      className="bg-bg px-6 py-14 md:px-10 md:py-[4.5rem] lg:px-16 lg:py-24"
+      className="bg-bg px-4 py-12 sm:px-6 sm:py-14 md:px-10 md:py-[4.5rem] lg:px-16 lg:py-24"
       aria-labelledby="location-heading"
     >
       <div className="mx-auto grid max-w-[1200px] gap-12 lg:grid-cols-2 lg:gap-16">
         <Reveal>
-          <div className="relative aspect-[16/10] overflow-hidden rounded-lg border border-line bg-line/40">
+          <div className="relative aspect-[16/11] min-h-[200px] overflow-hidden rounded-lg border border-line bg-line/40 sm:aspect-[16/10] sm:min-h-[220px]">
             <iframe
               title="Utah County area map"
               src={UTAH_COUNTY_MAP}
-              className="absolute inset-0 h-full w-full grayscale contrast-[0.92] opacity-90"
+              className="pointer-events-auto absolute inset-0 h-full w-full touch-manipulation grayscale contrast-[0.92] opacity-90"
               loading="lazy"
             />
             <div
@@ -33,7 +33,7 @@ export function Location() {
             >
               Utah County
             </h2>
-            <div className="mt-8 max-w-[36rem] space-y-8 text-ink-muted">
+            <div className="mt-8 max-w-[36rem] space-y-8 break-words text-ink-muted">
               <div>
                 <h3 className="font-sans text-lg font-semibold text-ink">
                   In-person sessions

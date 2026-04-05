@@ -1,6 +1,13 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { DM_Sans, Fraunces } from "next/font/google";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#f6f4ef",
+};
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -38,9 +45,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${fraunces.variable} h-full scroll-pt-[4.5rem] antialiased`}
+      className={`${dmSans.variable} ${fraunces.variable} h-full scroll-pt-16 antialiased md:scroll-pt-[4.5rem]`}
     >
-      <body className="min-h-full font-sans">{children}</body>
+      <body className="min-h-dvh min-h-full overflow-x-hidden font-sans pb-[env(safe-area-inset-bottom,0px)]">
+        {children}
+      </body>
     </html>
   );
 }

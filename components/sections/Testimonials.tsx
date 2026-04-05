@@ -18,7 +18,7 @@ const QUOTES = [
 export function Testimonials() {
   return (
     <section
-      className="px-6 py-14 md:px-10 md:py-[4.5rem] lg:px-16 lg:py-24"
+      className="px-4 py-12 sm:px-6 sm:py-14 md:px-10 md:py-[4.5rem] lg:px-16 lg:py-24"
       aria-labelledby="testimonials-heading"
     >
       <div className="mx-auto max-w-[1200px]">
@@ -30,11 +30,11 @@ export function Testimonials() {
             What families say
           </h2>
         </Reveal>
-        <div className="mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] md:grid md:grid-cols-2 md:overflow-visible md:pb-0 [&::-webkit-scrollbar]:hidden">
+        <div className="mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain pb-4 pl-1 pr-4 [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-6 sm:pr-6 md:grid md:grid-cols-2 md:gap-8 md:overflow-visible md:pb-0 md:pl-0 md:pr-0 [&::-webkit-scrollbar]:hidden">
           {QUOTES.map((q, i) => (
             <Reveal key={q.name} delayMs={i * 80}>
-              <figure className="w-[min(100%,380px)] shrink-0 snap-center md:w-auto">
-                <blockquote className="font-display text-2xl font-normal leading-snug text-ink md:text-[1.5rem]">
+              <figure className="w-[min(100%,calc(100vw-2.5rem))] max-w-[380px] shrink-0 snap-center sm:w-[min(100%,380px)] md:w-auto">
+                <blockquote className="font-display text-[clamp(1.25rem,4.2vw,1.5rem)] font-normal leading-snug text-ink md:text-[1.5rem]">
                   &ldquo;{q.quote}&rdquo;
                 </blockquote>
                 <figcaption className="mt-6 font-sans">

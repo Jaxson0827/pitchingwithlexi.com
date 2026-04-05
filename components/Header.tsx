@@ -19,6 +19,13 @@ export function Header() {
   }, []);
 
   useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
+  useEffect(() => {
     if (typeof window === "undefined") return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)")
       .matches;
@@ -76,10 +83,10 @@ export function Header() {
             aria-hidden
           />
         )}
-        <div className="mx-auto flex h-full max-w-[1200px] items-center justify-between px-6 md:px-10 lg:px-16">
+        <div className="mx-auto flex h-full max-w-[1200px] items-center justify-between gap-3 px-4 sm:px-6 md:px-10 lg:px-16">
           <a
             href="#"
-            className={`relative z-10 flex items-center outline-offset-4 ${
+            className={`relative z-10 flex min-w-0 shrink items-center outline-offset-4 ${
               scrolled ? "" : "drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)]"
             }`}
           >
@@ -88,7 +95,7 @@ export function Header() {
               alt="Pitching with Lexi"
               width={200}
               height={56}
-              className="h-9 w-auto max-h-10 object-contain object-left md:h-10 md:max-h-11"
+              className="h-8 max-h-9 w-auto max-w-[min(148px,48vw)] object-contain object-left sm:h-9 sm:max-h-10 md:h-10 md:max-h-11 md:max-w-none"
               priority
             />
           </a>
@@ -115,7 +122,7 @@ export function Header() {
 
           <button
             type="button"
-            className={`relative z-10 flex h-11 w-11 flex-col items-center justify-center gap-1.5 md:hidden ${
+            className={`relative z-10 flex min-h-12 min-w-12 shrink-0 flex-col items-center justify-center gap-1.5 md:hidden ${
               scrolled ? "text-ink" : "text-white"
             }`}
             aria-expanded={mobileOpen}
@@ -145,18 +152,21 @@ export function Header() {
       {mobileOpen && (
         <div
           id="mobile-menu"
-          className="fixed inset-0 z-40 flex flex-col bg-ink px-6 pb-10 pt-24 md:hidden"
+          className="fixed inset-0 z-40 flex flex-col bg-ink px-6 pb-[max(2.5rem,env(safe-area-inset-bottom))] pt-24 md:hidden"
           role="dialog"
           aria-modal="true"
           aria-label="Menu"
         >
-          <nav className="flex flex-1 flex-col gap-6" aria-label="Mobile primary">
+          <nav
+            className="flex flex-1 flex-col gap-1"
+            aria-label="Mobile primary"
+          >
             {NAV_LINKS.map(({ href, label }) => (
               <a
                 key={href}
                 href={href}
                 onClick={closeMobile}
-                className="font-sans text-2xl font-medium tracking-tight text-cream"
+                className="flex min-h-12 items-center rounded-md font-sans text-2xl font-medium tracking-tight text-cream active:bg-white/5"
               >
                 {label}
               </a>

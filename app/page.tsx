@@ -19,7 +19,7 @@ export default function Home() {
         Skip to main content
       </a>
       <Header />
-      <main id="main">
+      <main id="main" className="min-w-0">
         <Hero />
         <CredibilityStrip />
         <About />

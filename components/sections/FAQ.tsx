@@ -29,7 +29,7 @@ export function FAQ() {
   return (
     <section
       id="faq"
-      className="scroll-mt-20 border-t border-line bg-bg px-6 py-14 md:px-10 md:py-[4.5rem] lg:px-16 lg:py-24"
+      className="scroll-mt-20 border-t border-line bg-bg px-4 py-12 sm:px-6 sm:py-14 md:px-10 md:py-[4.5rem] lg:px-16 lg:py-24"
       aria-labelledby="faq-heading"
     >
       <div className="mx-auto max-w-[720px]">
@@ -54,12 +54,14 @@ export function FAQ() {
                     type="button"
                     aria-expanded={isOpen}
                     aria-controls={panelId}
-                    className="flex w-full items-center justify-between gap-4 py-5 text-left font-sans text-base font-medium text-ink transition-colors hover:text-ink-muted"
+                    className="flex min-h-14 w-full items-start justify-between gap-3 py-4 text-left font-sans text-base font-medium text-ink transition-colors hover:text-ink-muted sm:min-h-0 sm:items-center sm:gap-4 sm:py-5"
                     onClick={() => setOpen(isOpen ? null : i)}
                   >
-                    {item.q}
+                    <span className="min-w-0 flex-1 text-pretty pr-2">
+                      {item.q}
+                    </span>
                     <span
-                      className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line text-lg leading-none text-ink-muted"
+                      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-line text-lg leading-none text-ink-muted sm:h-8 sm:w-8"
                       aria-hidden
                     >
                       {isOpen ? "−" : "+"}
@@ -74,7 +76,7 @@ export function FAQ() {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <p className="pb-6 pr-12 text-ink-muted leading-relaxed">
+                      <p className="pb-6 pr-2 text-pretty leading-relaxed text-ink-muted sm:pr-12">
                         {item.a}
                       </p>
                     </div>
