@@ -16,10 +16,10 @@ export function Footer() {
             exploring options for your athlete.
           </p>
           <a
-            href="mailto:hello@pitchingwithlexi.com"
+            href="mailto:alexisatcitty@gmail.com"
             className="mt-8 inline-block max-w-full break-all font-sans text-base font-medium text-cream underline decoration-cream/30 underline-offset-4 transition-colors hover:decoration-cream sm:text-lg"
           >
-            hello@pitchingwithlexi.com
+            alexisatcitty@gmail.com
           </a>
           <div className="mt-10 flex items-center gap-4">
             <a
