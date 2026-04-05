@@ -8,14 +8,10 @@ import { Location } from "@/components/sections/Location";
 import { Services } from "@/components/sections/Services";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Waitlist } from "@/components/sections/Waitlist";
-import {
-  getWaitlistFormAction,
-  getWaitlistSubmitMode,
-} from "@/lib/site";
+import { getWaitlistFormAction } from "@/lib/site";
 
 export default function Home() {
-  const waitlistMode = getWaitlistSubmitMode();
-  const waitlistExternalAction = getWaitlistFormAction();
+  const waitlistAction = getWaitlistFormAction();
 
   return (
     <>
@@ -28,10 +24,7 @@ export default function Home() {
         <CredibilityStrip />
         <About />
         <Services />
-        <Waitlist
-          submitMode={waitlistMode}
-          externalFormAction={waitlistExternalAction}
-        />
+        <Waitlist formAction={waitlistAction} />
         <Location />
         <Testimonials />
         <FAQ />

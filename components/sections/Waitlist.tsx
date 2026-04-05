@@ -1,104 +1,77 @@
 "use client";
 
-import type { WaitlistSubmitMode } from "@/lib/site";
-import { FormEvent, useState } from "react";
+import { FormEvent, useLayoutEffect, useState } from "react";
+
+const SUCCESS_HASH = "#waitlist-success";
 
 type WaitlistProps = {
-  submitMode: WaitlistSubmitMode;
-  externalFormAction: string;
+  formAction: string;
 };
 
-export function Waitlist({ submitMode, externalFormAction }: WaitlistProps) {
+export function Waitlist({ formAction }: WaitlistProps) {
   const [error, setError] = useState<string | null>(null);
-  const [success, setSuccess] = useState(false);
-  const [pending, setPending] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
-  async function submitBuiltin(form: HTMLFormElement) {
-    const fd = new FormData(form);
-    const company = fd.get("company");
-    if (typeof company === "string" && company.trim() !== "") {
-      setSuccess(true);
-      form.reset();
-      return;
-    }
-
-    const email = fd.get("email");
-    const name = fd.get("name");
-    const phone = fd.get("phone");
-    const payload = {
-      email: typeof email === "string" ? email : "",
-      name: typeof name === "string" ? name : "",
-      phone: typeof phone === "string" ? phone : "",
-      company: typeof company === "string" ? company : "",
-    };
-
-    const res = await fetch("/api/waitlist", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-
-    const data = (await res.json().catch(() => ({}))) as {
-      error?: string;
-      ok?: boolean;
-    };
-
-    if (!res.ok) {
-      setError(data.error || "Something went wrong. Please try again.");
-      return;
-    }
-
-    setSuccess(true);
+  function onSubmit(e: FormEvent<HTMLFormElement>) {
     setError(null);
-    form.reset();
-  }
-
-  async function onSubmit(e: FormEvent<HTMLFormElement>) {
-    setError(null);
-
-    if (submitMode === "unset") {
+    if (!formAction) {
       e.preventDefault();
       setError(
-        "Waitlist isn’t configured yet. Add Google Sheet env vars (see .env.example) or set NEXT_PUBLIC_WAITLIST_FORM_ACTION.",
+        "Waitlist isn’t configured yet. Set NEXT_PUBLIC_WAITLIST_FORM_ACTION to your Google Apps Script Web App URL (see .env.example).",
       );
-      return;
-    }
-
-    if (submitMode === "builtin") {
-      e.preventDefault();
-      setPending(true);
-      try {
-        await submitBuiltin(e.currentTarget);
-      } finally {
-        setPending(false);
-      }
-      return;
-    }
-
-    if (!externalFormAction) {
-      e.preventDefault();
-      setError("Waitlist form URL is missing.");
     }
   }
 
-  if (success) {
+  useLayoutEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.location.hash !== SUCCESS_HASH) return;
+
+    setShowSuccess(true);
+    window.history.replaceState(
+      null,
+      "",
+      `${window.location.pathname}${window.location.search}`,
+    );
+
+    requestAnimationFrame(() => {
+      document.getElementById("waitlist")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+  }, []);
+
+  if (showSuccess) {
     return (
       <section
         id="waitlist"
         className="scroll-mt-20 px-4 py-12 sm:px-6 sm:py-14 md:px-10 md:py-[4.5rem] lg:px-16 lg:py-24"
-        aria-labelledby="waitlist-heading"
+        aria-labelledby="waitlist-success-heading"
       >
         <div className="mx-auto max-w-[880px] rounded-xl border border-line bg-bg-elevated p-5 shadow-[var(--shadow-panel)] sm:p-6 md:p-12">
-          <h2
-            id="waitlist-heading"
-            className="font-display text-[clamp(2rem,3.5vw,3rem)] font-medium leading-[1.12] tracking-[-0.02em] text-ink"
-          >
-            You&apos;re on the list
-          </h2>
-          <p className="mt-3 max-w-xl text-pretty text-ink-muted" role="status">
-            Thanks for signing up. I&apos;ll email you when new lesson spots
-            open.
+          <p className="font-sans text-xs font-medium uppercase tracking-[0.12em] text-ink-muted">
+            Waitlist confirmed
           </p>
+          <h2
+            id="waitlist-success-heading"
+            className="mt-3 font-display text-[clamp(1.75rem,3vw,2.5rem)] font-medium leading-[1.15] tracking-[-0.02em] text-ink"
+          >
+            Thank you for signing up
+          </h2>
+          <div
+            className="mt-6 max-w-xl space-y-4 text-pretty text-base leading-relaxed text-ink-muted"
+            role="status"
+            aria-live="polite"
+          >
+            <p>
+              Your details have been saved. You&apos;ll be among the first to
+              know when new lesson spots open.
+            </p>
+            <p>
+              We&apos;ll only contact you when it&apos;s relevant to scheduling
+              or availability—never spam.
+            </p>
+          </div>
         </div>
       </section>
     );
@@ -124,24 +97,10 @@ export function Waitlist({ submitMode, externalFormAction }: WaitlistProps) {
 
         <form
           className="mt-10 space-y-6"
-          action={
-            submitMode === "external" ? externalFormAction || undefined : undefined
-          }
-          method={submitMode === "external" ? "POST" : undefined}
+          action={formAction || undefined}
+          method={formAction ? "POST" : undefined}
           onSubmit={onSubmit}
         >
-          {submitMode === "builtin" ? (
-            <div className="sr-only" aria-hidden="true">
-              <label htmlFor="waitlist-company">Company</label>
-              <input
-                id="waitlist-company"
-                name="company"
-                type="text"
-                tabIndex={-1}
-                autoComplete="off"
-              />
-            </div>
-          ) : null}
           <div>
             <label
               htmlFor="waitlist-email"
@@ -156,8 +115,7 @@ export function Waitlist({ submitMode, externalFormAction }: WaitlistProps) {
               required
               autoComplete="email"
               placeholder="you@example.com"
-              disabled={pending}
-              className="mt-2 w-full rounded-md border border-line bg-bg px-4 py-3 font-sans text-base text-ink placeholder:text-ink-faint focus:border-ink-faint focus:outline-none focus:ring-2 focus:ring-accent/30 disabled:opacity-60"
+              className="mt-2 w-full rounded-md border border-line bg-bg px-4 py-3 font-sans text-base text-ink placeholder:text-ink-faint focus:border-ink-faint focus:outline-none focus:ring-2 focus:ring-accent/30"
             />
           </div>
           <div>
@@ -173,8 +131,7 @@ export function Waitlist({ submitMode, externalFormAction }: WaitlistProps) {
               type="text"
               autoComplete="name"
               placeholder="Athlete or parent name"
-              disabled={pending}
-              className="mt-2 w-full rounded-md border border-line bg-bg px-4 py-3 font-sans text-base text-ink placeholder:text-ink-faint focus:border-ink-faint focus:outline-none focus:ring-2 focus:ring-accent/30 disabled:opacity-60"
+              className="mt-2 w-full rounded-md border border-line bg-bg px-4 py-3 font-sans text-base text-ink placeholder:text-ink-faint focus:border-ink-faint focus:outline-none focus:ring-2 focus:ring-accent/30"
             />
           </div>
           <div>
@@ -192,8 +149,7 @@ export function Waitlist({ submitMode, externalFormAction }: WaitlistProps) {
               autoComplete="tel"
               inputMode="tel"
               placeholder="(555) 123-4567"
-              disabled={pending}
-              className="mt-2 w-full rounded-md border border-line bg-bg px-4 py-3 font-sans text-base text-ink placeholder:text-ink-faint focus:border-ink-faint focus:outline-none focus:ring-2 focus:ring-accent/30 disabled:opacity-60"
+              className="mt-2 w-full rounded-md border border-line bg-bg px-4 py-3 font-sans text-base text-ink placeholder:text-ink-faint focus:border-ink-faint focus:outline-none focus:ring-2 focus:ring-accent/30"
             />
           </div>
 
@@ -205,10 +161,9 @@ export function Waitlist({ submitMode, externalFormAction }: WaitlistProps) {
 
           <button
             type="submit"
-            disabled={pending}
-            className="inline-flex h-[52px] min-h-[44px] w-full items-center justify-center rounded-md bg-accent px-7 font-sans text-base font-medium text-white transition-[background,transform] duration-200 hover:-translate-y-px hover:bg-accent-hover active:translate-y-0 disabled:pointer-events-none disabled:opacity-60 sm:w-auto"
+            className="inline-flex h-[52px] min-h-[44px] w-full items-center justify-center rounded-md bg-accent px-7 font-sans text-base font-medium text-white transition-[background,transform] duration-200 hover:-translate-y-px hover:bg-accent-hover active:translate-y-0 sm:w-auto"
           >
-            {pending ? "Sending…" : "Join my waitlist"}
+            Join my waitlist
           </button>
         </form>
 
