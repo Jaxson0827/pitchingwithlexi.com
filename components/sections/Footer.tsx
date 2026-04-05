@@ -16,12 +16,20 @@ export function Footer() {
             Reach out anytime—whether you&apos;re on the waitlist or still
             exploring options for your athlete.
           </p>
-          <a
-            href="mailto:alexisatcitty@gmail.com"
-            className="mt-8 inline-block max-w-full break-all font-sans text-base font-medium text-cream underline decoration-cream/30 underline-offset-4 transition-colors hover:decoration-cream sm:text-lg"
-          >
-            alexisatcitty@gmail.com
-          </a>
+          <div className="mt-8 flex flex-col gap-3 sm:gap-4">
+            <a
+              href="mailto:alexisatcitty@gmail.com"
+              className="inline-block max-w-full break-all font-sans text-base font-medium text-cream underline decoration-cream/30 underline-offset-4 transition-colors hover:decoration-cream sm:text-lg"
+            >
+              alexisatcitty@gmail.com
+            </a>
+            <a
+              href="tel:+18017873988"
+              className="inline-block font-sans text-base font-medium text-cream underline decoration-cream/30 underline-offset-4 transition-colors hover:decoration-cream sm:text-lg"
+            >
+              (801) 787-3988
+            </a>
+          </div>
           <div className="mt-10 flex items-center gap-4">
             <a
               href="https://www.instagram.com/pitchingwithlexi/"

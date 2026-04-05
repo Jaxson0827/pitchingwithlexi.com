@@ -70,9 +70,6 @@ export function About() {
                 athletes in Utah County.
               </p>
             </div>
-            <blockquote className="mt-10 border-l-[3px] border-accent pl-4 font-display text-xl font-normal italic leading-snug text-ink sm:pl-6 sm:text-2xl">
-              Move efficiently, throw with intent—and make it play in games.
-            </blockquote>
           </div>
         </Reveal>
       </div>

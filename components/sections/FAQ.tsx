@@ -5,20 +5,20 @@ import { Reveal } from "@/components/Reveal";
 
 const ITEMS = [
   {
-    q: "How do I reschedule or cancel?",
-    a: "Use the link in your confirmation email, or reach out directly. A clear policy window (e.g. 24 hours) keeps slots fair for everyone—set yours and we’ll mirror it here.",
+    q: "Does my daughter need a catcher?",
+    a: "Yes—unless I specify otherwise, she will need someone to catch for her or to bring her own net if she doesn’t have a catcher.",
   },
   {
-    q: "What ages and levels do you coach?",
-    a: "From beginners building a foundation to advanced pitchers refining speed and spin. Join the waitlist and we’ll match you when a spot fits.",
+    q: "What ages do you coach?",
+    a: "I coach as young as 8 years old and through high school. Exceptions can be made—just reach out.",
   },
   {
-    q: "Do parents stay for lessons?",
-    a: "You’re welcome to observe quietly. Many athletes focus best with a quick handoff—whatever works for your family.",
+    q: "What is your cancellation policy?",
+    a: "I don’t require a booking fee, but I ask that you cancel at least 24 hours in advance. I understand extenuating circumstances.",
   },
   {
-    q: "How does payment work?",
-    a: "When you’re offered a spot off the waitlist, you’ll get clear pricing and payment options before anything is confirmed.",
+    q: "Do you travel?",
+    a: "Right now I stay in Utah County. I have done team practices and traveled to those; travel fees and team pricing are different—reach out to discuss.",
   },
 ] as const;
 

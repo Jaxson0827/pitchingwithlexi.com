@@ -6,7 +6,6 @@ import { Footer } from "@/components/sections/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { Location } from "@/components/sections/Location";
 import { Services } from "@/components/sections/Services";
-import { Testimonials } from "@/components/sections/Testimonials";
 import { Waitlist } from "@/components/sections/Waitlist";
 import { getWaitlistFormAction } from "@/lib/site";
 
@@ -26,7 +25,6 @@ export default function Home() {
         <Services />
         <Waitlist formAction={waitlistAction} />
         <Location />
-        <Testimonials />
         <FAQ />
         <Footer />
       </main>

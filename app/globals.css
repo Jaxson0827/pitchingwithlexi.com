@@ -1,16 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #f6f4ef;
+  --bg: #ececea;
   --bg-elevated: #ffffff;
-  --ink: #14120f;
-  --ink-muted: #5c5852;
-  --ink-faint: #8a857c;
-  --line: #e3ded4;
-  --accent: #c45c3e;
-  --accent-hover: #a64e35;
-  --accent-subtle: rgba(196, 92, 62, 0.12);
-  --cream: #e8e2d6;
+  --ink: #131515;
+  --ink-muted: #2b2c28;
+  --ink-faint: #959694;
+  --line: #d8d8d6;
+  --accent: #131515;
+  --accent-hover: #2b2c28;
+  --accent-subtle: rgba(160, 237, 230, 0.18);
+  --cream: #e8e8e7;
+  --focus-ring: #04b9cd;
 }
 
 @theme inline {
@@ -26,9 +27,9 @@
   --color-cream: var(--cream);
   --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
   --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
-  --shadow-panel: 0 30px 80px rgba(20, 18, 15, 0.06);
-  --shadow-header: 0 8px 30px rgba(20, 18, 15, 0.06);
-  --shadow-card-hover: 0 20px 50px rgba(20, 18, 15, 0.08);
+  --shadow-panel: 0 30px 80px rgba(19, 21, 21, 0.06);
+  --shadow-header: 0 8px 30px rgba(19, 21, 21, 0.06);
+  --shadow-card-hover: 0 20px 50px rgba(19, 21, 21, 0.08);
   --ease-luxury: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
@@ -59,9 +60,8 @@ body {
   }
 }
 
-/* Focus visible — spec: 2px accent outline, 2px offset */
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 

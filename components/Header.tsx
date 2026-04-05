@@ -112,7 +112,7 @@ export function Header() {
                   <span
                     className={`absolute -bottom-1 left-0 h-0.5 w-full origin-left rounded-full transition-transform duration-200 ${
                       active === id ? "scale-x-100" : "scale-x-0"
-                    } ${scrolled ? "bg-accent" : "bg-white"}`}
+                    } ${scrolled ? "bg-[#04B9CD]" : "bg-white"}`}
                     aria-hidden
                   />
                 </a>

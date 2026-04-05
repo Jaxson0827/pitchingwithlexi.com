@@ -115,7 +115,7 @@ export function Waitlist({ formAction }: WaitlistProps) {
               required
               autoComplete="email"
               placeholder="you@example.com"
-              className="mt-2 w-full rounded-md border border-line bg-bg px-4 py-3 font-sans text-base text-ink placeholder:text-ink-faint focus:border-ink-faint focus:outline-none focus:ring-2 focus:ring-accent/30"
+              className="mt-2 w-full rounded-md border border-line bg-bg px-4 py-3 font-sans text-base text-ink placeholder:text-ink-faint focus:border-ink-faint focus:outline-none focus:ring-2 focus:ring-[#04B9CD]/35"
             />
           </div>
           <div>
@@ -131,7 +131,7 @@ export function Waitlist({ formAction }: WaitlistProps) {
               type="text"
               autoComplete="name"
               placeholder="Athlete or parent name"
-              className="mt-2 w-full rounded-md border border-line bg-bg px-4 py-3 font-sans text-base text-ink placeholder:text-ink-faint focus:border-ink-faint focus:outline-none focus:ring-2 focus:ring-accent/30"
+              className="mt-2 w-full rounded-md border border-line bg-bg px-4 py-3 font-sans text-base text-ink placeholder:text-ink-faint focus:border-ink-faint focus:outline-none focus:ring-2 focus:ring-[#04B9CD]/35"
             />
           </div>
           <div>
@@ -149,12 +149,12 @@ export function Waitlist({ formAction }: WaitlistProps) {
               autoComplete="tel"
               inputMode="tel"
               placeholder="(555) 123-4567"
-              className="mt-2 w-full rounded-md border border-line bg-bg px-4 py-3 font-sans text-base text-ink placeholder:text-ink-faint focus:border-ink-faint focus:outline-none focus:ring-2 focus:ring-accent/30"
+              className="mt-2 w-full rounded-md border border-line bg-bg px-4 py-3 font-sans text-base text-ink placeholder:text-ink-faint focus:border-ink-faint focus:outline-none focus:ring-2 focus:ring-[#04B9CD]/35"
             />
           </div>
 
           {error && (
-            <p className="break-words text-sm text-accent" role="alert">
+            <p className="break-words text-sm text-red-600" role="alert">
               {error}
             </p>
           )}

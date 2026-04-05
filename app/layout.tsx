@@ -6,7 +6,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#f6f4ef",
+  themeColor: "#ececea",
 };
 
 const dmSans = DM_Sans({
