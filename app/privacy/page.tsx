@@ -46,7 +46,8 @@ export default function PrivacyPage() {
               <li>
                 <strong className="text-ink">Waitlist and inquiries:</strong>{" "}
                 When you join a waitlist or reach out, we may collect your name,
-                email address, and any details you choose to provide.
+                email address, phone number, and any details you choose to
+                provide.
               </li>
               <li>
                 <strong className="text-ink">Communications:</strong> If you
