@@ -23,7 +23,7 @@ export function Footer() {
           </a>
           <div className="mt-10 flex items-center gap-4">
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/pitchingwithlexi/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex min-h-11 min-w-11 items-center justify-center rounded-full border border-cream/35 text-cream transition-colors hover:border-cream/55"
