@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const METRICS = [
-  { value: "10+", label: "Years coaching" },
-  { value: "1:1", label: "Private sessions" },
-  { value: "Local & remote", label: "In-person & online" },
-  { value: "Mechanics-first", label: "Long-term health" },
+  { value: "6+", label: "Years coaching pitchers" },
+  { value: "DI", label: "BYU & UNM pitcher" },
+  { value: "Utah County", label: "Training & coaching" },
+  { value: "Elite exposure", label: "Texas · Arizona · FSU +" },
 ];
 
 export function CredibilityStrip() {
@@ -53,10 +53,10 @@ export function CredibilityStrip() {
                 : { transitionDelay: "0ms" }
             }
           >
-            <span className="font-display text-[2rem] font-medium leading-none text-cream">
+            <span className="font-display text-[clamp(1.35rem,3vw,2rem)] font-medium leading-tight text-cream">
               {m.value}
             </span>
-            <span className="mt-2 font-sans text-[0.8125rem] font-medium uppercase tracking-[0.08em] text-cream/55">
+            <span className="mt-2 max-w-[11rem] font-sans text-[0.8125rem] font-medium uppercase leading-snug tracking-[0.08em] text-cream/55">
               {m.label}
             </span>
           </div>

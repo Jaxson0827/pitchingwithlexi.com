@@ -12,7 +12,7 @@ export function Hero() {
         <div className="relative order-1 h-[58vh] min-h-[280px] lg:order-2 lg:h-auto lg:min-h-[100svh]">
           <Image
             src={HERO_SRC}
-            alt="Pitching with Lexi — private softball pitching instruction"
+            alt="Lexi Atcitty — Pitching with Lexi"
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 58vw"
@@ -26,25 +26,18 @@ export function Hero() {
 
         <div className="relative z-[1] order-2 -mt-6 flex flex-1 flex-col justify-end rounded-t-2xl bg-bg px-6 pb-12 pt-10 text-ink lg:order-1 lg:mt-0 lg:justify-center lg:rounded-none lg:bg-transparent lg:px-10 lg:pb-0 lg:pl-16 lg:pr-8 lg:pt-20 lg:text-white">
           <p className="mb-3 font-sans text-[0.75rem] font-medium uppercase tracking-[0.12em] text-ink-faint lg:text-white/60">
-            Private softball pitching
+            Private softball pitching · Utah County
           </p>
           <h1 className="font-display text-[clamp(2.75rem,5vw,4.25rem)] font-semibold leading-[1.08] tracking-[-0.02em] lg:text-white">
             Train with intention.
             <br />
             Pitch with confidence.
           </h1>
-          <p className="mt-6 max-w-[22rem] font-sans text-lg leading-relaxed text-ink-muted italic lg:text-white/75">
-            One-on-one lessons built around your athlete—mechanics, mindset,
-            and a plan that lasts beyond the mound.
+          <p className="mt-6 max-w-[24rem] font-sans text-lg leading-relaxed text-ink-muted italic lg:text-white/75">
+            Former Division I pitcher helping athletes build confidence, power,
+            and command in the circle.
           </p>
           <p className="mt-10 font-sans text-base">
-            <a
-              href="#services"
-              className="text-ink-muted underline decoration-line underline-offset-4 transition-colors hover:text-ink lg:text-white/80 lg:decoration-white/30 lg:hover:text-white"
-            >
-              Explore services
-            </a>
-            <span className="text-ink-faint lg:text-white/40"> · </span>
             <a
               href="#waitlist"
               className="font-medium text-accent underline decoration-accent/35 underline-offset-4 transition-colors hover:text-accent-hover lg:text-white lg:decoration-white/40 lg:hover:text-cream"

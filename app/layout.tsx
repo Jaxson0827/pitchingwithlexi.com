@@ -15,17 +15,17 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Pitching with Lexi | Private Softball Pitching Lessons",
+  title: "Pitching with Lexi | Lexi Atcitty — Utah County Pitching Coach",
   description:
-    "One-on-one pitching instruction—private in-person and online lessons focused on mechanics, confidence, and longevity.",
+    "Former DI pitcher (BYU & UNM). Private 1-on-1 and 2-on-1 lessons, plus online check-ins—mechanics, power, pitch design, and confidence in the circle. Utah County.",
   icons: {
     icon: [{ url: "/logo.png", type: "image/png" }],
     apple: [{ url: "/logo.png", type: "image/png" }],
   },
   openGraph: {
-    title: "Pitching with Lexi",
+    title: "Pitching with Lexi | Lexi Atcitty",
     description:
-      "Private softball pitching lessons—in-person and online—with Lexi.",
+      "Division I experience, 6+ years coaching pitchers in Utah County. Lessons focused on mechanics, explosiveness, and long-term development.",
     images: ["/logo.png"],
   },
 };

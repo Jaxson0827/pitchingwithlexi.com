@@ -1,5 +1,9 @@
 import { Reveal } from "@/components/Reveal";
 
+/** Rough bbox for Utah County, Utah (OpenStreetMap embed) */
+const UTAH_COUNTY_MAP =
+  "https://www.openstreetmap.org/export/embed.html?bbox=-111.95%2C40.05%2C-111.35%2C40.55&layer=mapnik";
+
 export function Location() {
   return (
     <section
@@ -10,8 +14,8 @@ export function Location() {
         <Reveal>
           <div className="relative aspect-[16/10] overflow-hidden rounded-lg border border-line bg-line/40">
             <iframe
-              title="Lesson location map"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-95.5%2C29.6%2C-95.2%2C29.9&amp;layer=mapnik"
+              title="Utah County area map"
+              src={UTAH_COUNTY_MAP}
               className="absolute inset-0 h-full w-full grayscale contrast-[0.92] opacity-90"
               loading="lazy"
             />
@@ -27,7 +31,7 @@ export function Location() {
               id="location-heading"
               className="font-display text-[clamp(2rem,3.5vw,3rem)] font-medium leading-[1.12] tracking-[-0.02em] text-ink"
             >
-              Where we meet
+              Utah County
             </h2>
             <div className="mt-8 max-w-[36rem] space-y-8 text-ink-muted">
               <div>
@@ -35,8 +39,10 @@ export function Location() {
                   In-person sessions
                 </h3>
                 <p className="mt-2">
-                  Replace this block with your facility address, parking notes,
-                  and gate or field instructions. Parents appreciate specifics.
+                  I coach pitchers in and around{" "}
+                  <strong className="font-semibold text-ink">Utah County</strong>
+                  . Exact facility or field details are shared when you join the
+                  waitlist or schedule a session.
                 </p>
               </div>
               <div>
@@ -45,17 +51,19 @@ export function Location() {
                 </h3>
                 <p className="mt-2">
                   Cleats or turfs, water, glove, and any training tools you
-                  already use. If you film for review, have your phone charged.
+                  already use. If you&apos;re filming for check-ins or review,
+                  have your phone charged and a simple way to capture side /
+                  front angles.
                 </p>
               </div>
               <div>
                 <h3 className="font-sans text-lg font-semibold text-ink">
-                  Online sessions
+                  Online check-ins
                 </h3>
                 <p className="mt-2">
-                  Clear space for full delivery, decent lighting toward the
-                  camera, and a stable stand or person filming. We&apos;ll send
-                  the video link before your slot.
+                  Clear space for full delivery, lighting toward the camera, and
+                  a stable camera angle. You&apos;ll get mechanical notes, drill
+                  ideas, and adjustments you can use right away.
                 </p>
               </div>
             </div>

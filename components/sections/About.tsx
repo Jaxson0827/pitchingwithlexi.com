@@ -16,7 +16,7 @@ export function About() {
           <div className="relative aspect-[4/5] max-h-[520px] w-full overflow-hidden border border-line bg-line/30">
             <Image
               src={ABOUT_IMG}
-              alt="Coach working with an athlete"
+              alt="Lexi Atcitty coaching pitching"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -33,22 +33,46 @@ export function About() {
               id="about-heading"
               className="font-display text-[clamp(2rem,3.5vw,3rem)] font-medium leading-[1.12] tracking-[-0.02em] text-ink"
             >
-              The coach in your corner.
+              Meet Lexi
             </h2>
             <div className="mt-8 max-w-[36rem] space-y-5 text-ink-muted">
-              <p>
-                I&apos;m Lexi—pitching coach focused on building repeatable
-                mechanics, arm health, and the kind of confidence that shows up
-                in games, not just lessons.
+              <p className="text-ink">
+                I&apos;m <strong className="font-semibold">Lexi Atcitty</strong>
+                , former Division I pitcher, and I&apos;m passionate about
+                helping pitchers build confidence, power, and command in the
+                circle. I&apos;ve trained and competed at the highest levels, and
+                now I use that experience to teach pitchers how to move
+                efficiently, throw with intent, and develop pitches that actually
+                translate in games. My lessons focus on mechanics,
+                explosiveness, mental approach, and long-term development.
               </p>
               <p>
-                Every session is tailored to the athlete in front of me:
-                video when it helps, drills that transfer to the circle, and
-                honest feedback parents and players can act on.
+                I played Division I softball at{" "}
+                <strong className="font-semibold text-ink">BYU</strong> and{" "}
+                <strong className="font-semibold text-ink">UNM</strong> and now
+                I currently coach in{" "}
+                <strong className="font-semibold text-ink">Utah County</strong>.
+                During my personal player development, I traveled and learned
+                from coaches and players at top programs including the{" "}
+                <strong className="font-semibold text-ink">
+                  University of Texas
+                </strong>
+                ,{" "}
+                <strong className="font-semibold text-ink">
+                  University of Arizona
+                </strong>
+                ,{" "}
+                <strong className="font-semibold text-ink">
+                  Florida State
+                </strong>
+                , and more. I&apos;ve now been coaching pitchers for over{" "}
+                <strong className="font-semibold text-ink">6 years</strong>,
+                bringing high-level experience and intentional development to
+                athletes in Utah County.
               </p>
             </div>
             <blockquote className="mt-10 border-l-[3px] border-accent pl-6 font-display text-2xl font-normal italic leading-snug text-ink">
-              Small adjustments, done with intention, change everything.
+              Move efficiently, throw with intent—and make it play in games.
             </blockquote>
           </div>
         </Reveal>
