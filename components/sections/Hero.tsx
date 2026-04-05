@@ -1,7 +1,6 @@
 import Image from "next/image";
 
-const HERO_SRC =
-  "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=2000&q=80";
+const HERO_SRC = encodeURI("/homepage images/hero.jpg");
 
 export function Hero() {
   return (
@@ -13,7 +12,7 @@ export function Hero() {
         <div className="relative order-1 h-[58vh] min-h-[280px] lg:order-2 lg:h-auto lg:min-h-[100svh]">
           <Image
             src={HERO_SRC}
-            alt="Athlete training on field at dusk"
+            alt="Pitching with Lexi — private softball pitching instruction"
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 58vw"

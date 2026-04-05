@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { NAV_LINKS } from "@/lib/site";
 
@@ -78,11 +79,18 @@ export function Header() {
         <div className="mx-auto flex h-full max-w-[1200px] items-center justify-between px-6 md:px-10 lg:px-16">
           <a
             href="#"
-            className={`relative z-10 font-sans text-base font-medium tracking-tight ${
-              scrolled ? "text-ink" : "text-white"
+            className={`relative z-10 flex items-center outline-offset-4 ${
+              scrolled ? "" : "drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)]"
             }`}
           >
-            Pitching with Lexi
+            <Image
+              src="/logo.png"
+              alt="Pitching with Lexi"
+              width={200}
+              height={56}
+              className="h-9 w-auto max-h-10 object-contain object-left md:h-10 md:max-h-11"
+              priority
+            />
           </a>
 
           <nav

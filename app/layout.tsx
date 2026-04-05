@@ -18,10 +18,15 @@ export const metadata: Metadata = {
   title: "Pitching with Lexi | Private Softball Pitching Lessons",
   description:
     "One-on-one pitching instruction—private in-person and online lessons focused on mechanics, confidence, and longevity.",
+  icons: {
+    icon: [{ url: "/logo.png", type: "image/png" }],
+    apple: [{ url: "/logo.png", type: "image/png" }],
+  },
   openGraph: {
     title: "Pitching with Lexi",
     description:
       "Private softball pitching lessons—in-person and online—with Lexi.",
+    images: ["/logo.png"],
   },
 };
 
