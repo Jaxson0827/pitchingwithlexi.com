@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f6f4ef;
+  --bg-elevated: #ffffff;
+  --ink: #14120f;
+  --ink-muted: #5c5852;
+  --ink-faint: #8a857c;
+  --line: #e3ded4;
+  --accent: #c45c3e;
+  --accent-hover: #a64e35;
+  --accent-subtle: rgba(196, 92, 62, 0.12);
+  --cream: #e8e2d6;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-subtle: var(--accent-subtle);
+  --color-cream: var(--cream);
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --shadow-panel: 0 30px 80px rgba(20, 18, 15, 0.06);
+  --shadow-header: 0 8px 30px rgba(20, 18, 15, 0.06);
+  --shadow-card-hover: 0 20px 50px rgba(20, 18, 15, 0.08);
+  --ease-luxury: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 639px) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+/* Focus visible — spec: 2px accent outline, 2px offset */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
