@@ -1,8 +1,7 @@
 import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
 
-const ABOUT_IMG =
-  "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=80";
+const ABOUT_IMG = encodeURI("/homepage images/homepage_1.jpg");
 
 export function About() {
   return (
