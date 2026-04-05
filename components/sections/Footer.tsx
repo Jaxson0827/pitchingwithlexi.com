@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 
 export function Footer() {
@@ -48,18 +49,18 @@ export function Footer() {
         <div className="mt-16 flex flex-col gap-3 border-t border-white/15 pt-8 font-sans text-[0.8125rem] text-cream/45 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Pitching with Lexi. All rights reserved.</p>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
-            <a
-              href="#"
+            <Link
+              href="/privacy"
               className="inline-flex min-h-11 items-center py-1 transition-colors hover:text-cream/70"
             >
               Privacy
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/terms"
               className="inline-flex min-h-11 items-center py-1 transition-colors hover:text-cream/70"
             >
               Terms
-            </a>
+            </Link>
           </div>
         </div>
       </div>
