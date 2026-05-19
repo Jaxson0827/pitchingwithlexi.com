@@ -129,8 +129,7 @@ export function Waitlist({ formAction }: WaitlistProps) {
           Join my waitlist
         </h2>
         <p className="mt-3 max-w-xl text-pretty text-ink-muted">
-          Get first access when new lesson spots open. I&apos;ll only email you
-          when it matters—no spam.
+          Get first access when new lesson spots open.
         </p>
 
         <form
@@ -204,10 +203,6 @@ export function Waitlist({ formAction }: WaitlistProps) {
             {submitting ? "Submitting…" : "Join my waitlist"}
           </button>
         </form>
-
-        <p className="mt-6 text-center text-[0.8125rem] text-ink-faint">
-          We respect your inbox. Unsubscribe anytime.
-        </p>
       </div>
     </section>
   );
