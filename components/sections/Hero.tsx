@@ -37,14 +37,20 @@ export function Hero() {
             Former Division I pitcher helping athletes build confidence, power,
             and command in the circle.
           </p>
-          <p className="mt-8 font-sans text-base sm:mt-10">
+          <div className="mt-8 flex flex-col gap-4 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:gap-5">
+            <a
+              href="#clinic"
+              className="inline-flex min-h-11 items-center justify-center rounded-md bg-[#04B9CD] px-6 font-sans text-base font-medium text-white transition-[background,transform] duration-200 hover:-translate-y-px hover:bg-[#039aad] active:translate-y-0 lg:bg-white lg:text-ink lg:hover:bg-cream"
+            >
+              Register — July 17 clinic
+            </a>
             <a
               href="#waitlist"
               className="inline-flex min-h-11 items-center font-medium text-accent underline decoration-accent/35 underline-offset-[0.22em] transition-colors hover:text-accent-hover lg:text-white lg:decoration-white/40 lg:hover:text-cream"
             >
               Join the waitlist
             </a>
-          </p>
+          </div>
         </div>
       </div>
 

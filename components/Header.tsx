@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { NAV_LINKS } from "@/lib/site";
 
-const SECTION_IDS = ["about", "services", "waitlist", "faq", "contact"] as const;
+const SECTION_IDS = ["clinic", "about", "services", "waitlist", "faq", "contact"] as const;
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);

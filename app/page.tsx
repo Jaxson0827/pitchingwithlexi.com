@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import { About } from "@/components/sections/About";
 import { CredibilityStrip } from "@/components/sections/CredibilityStrip";
+import { Clinic } from "@/components/sections/Clinic";
 import { FAQ } from "@/components/sections/FAQ";
 import { Footer } from "@/components/sections/Footer";
 import { Hero } from "@/components/sections/Hero";
@@ -21,6 +22,7 @@ export default function Home() {
       <main id="main" className="min-w-0">
         <Hero />
         <CredibilityStrip />
+        <Clinic />
         <About />
         <Services />
         <Waitlist formAction={waitlistAction} />
